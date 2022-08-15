@@ -15,10 +15,12 @@ class Roulette {
     //red
     if (Math.random() < 0.5) {
       this.ballDegree = (0.15 * 2 * PI) / NUM_PIECES;
+      this.winColor = "red";
     }
     //black
     else {
       this.ballDegree = (-0.85 * 2 * PI) / NUM_PIECES;
+      this.winColor = "black";
     }
     this.ballDegreeStep = PI * 0.04;
     this.ballDegreeAcc = PI * 0.04 * 0.002;
@@ -58,8 +60,8 @@ class Roulette {
     push();
     translate(width / 2, height / 2);
     rotate(this.ballDegree);
-    circle(this.sliceRad * this.ballPosRadRatio, 0, this.ballRad);
     fill(255);
+    circle(this.sliceRad * this.ballPosRadRatio, 0, this.ballRad);
     pop();
   }
   ballUpdate() {

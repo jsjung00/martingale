@@ -5,15 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Sketch</title>
-
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    </style>
     <link rel="stylesheet" type="text/css" href="style.css" />
-
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
   </head>
 
   <body>
+    <div id="container">
+      <div id="startContainer">
+        <div id="settingsContainer">
+          <div class="titleRow">
+            <div>Martingale Simulator</div>
+          </div>
+          <div class="settingRow">
+            <div>Starting Amount</div>
+            <input
+              type="number"
+              id="betAmount"
+              required
+              minlength="1"
+              maxlength="10"
+              size="12"
+            />
+          </div>
+          <div class="settingRow">
+            <div>Winning Color</div>
+            <select name="winningColor" id="winningColor">
+              <option value="red">Red</option>
+              <option value="black">Black</option>
+            </select>
+          </div>
+          <div class="playRow">
+            <button
+              type="button"
+              name="unclicked"
+              id="playButton"
+              onclick="clickPlay(this)"
+            >
+              Start
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="sketchContainer"></div>
+    </div>
+
     <script src="sketch.js"></script>
     <script src="roulette.js"></script>
   </body>
+  <script>
+    function clickPlay(elm) {
+      elm.name = "clicked";
+      document.getElementById("startContainer").style.display = "none";
+      document.getElementById("sketchContainer").style.display = "block";
+    }
+  </script>
 </html>
