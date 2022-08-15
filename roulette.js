@@ -38,9 +38,9 @@ class Roulette {
     let d = this.boardRad * 2;
     for (let i = 0; i < NUM_PIECES; i++) {
       if (i % 2 == 0) {
-        fill(255, 0, 0);
+        fill(200, 29, 37);
       } else {
-        fill(0);
+        fill(7, 6, 0);
       }
       stroke(255);
       arc(0, 0, 2 * this.sliceRad, 2 * this.sliceRad, i * a, (i + 1) * a, PIE);
